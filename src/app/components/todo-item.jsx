@@ -2,7 +2,7 @@ import React from 'react';
 
 class TodoItem extends React.Component {
   render() {
-    return <div>TodoItem</div>;
+    return <div>{this.props.name}</div>;
   }
 }
 
