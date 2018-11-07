@@ -2,21 +2,18 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
   entry: './src/app/main.js',
-  output: { 
-    path: __dirname, 
+  output: {
+    path: __dirname,
     filename: 'bundle.js'
   },
+  devtool: 'inline-source-map',
   module: {
-    loaders: [
-      {
-        test: /.jsx?$/,
-        loader: 'babel-loader?stage=0',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
-      }
-    ]
+    rules: [{
+      test: /.jsx?$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/
+    }]
   },
 };
